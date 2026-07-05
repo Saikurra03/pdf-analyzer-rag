@@ -3,6 +3,7 @@ groq
 sentence-transformers
 chromadb
 PyPDF2
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
 python-dotenv
 plotly
