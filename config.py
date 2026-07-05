@@ -11,8 +11,11 @@ from sentence_transformers import SentenceTransformer
 load_dotenv()
 
 try:
-    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
-except (KeyError, FileNotFoundError):
+    GROQ_API_KEY = st.secrets.get("GROQ_API_KEY", None)
+except Exception:
+    GROQ_API_KEY = None
+
+if not GROQ_API_KEY:
     GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # ===========================================
